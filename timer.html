@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html>
-	<head>
-			<meta charset="UTF-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<link rel="stylesheet" type="text/css" href="timer.css" />
-			<script type="text/javascript" src="timer.js"></script>
-	</head>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JSTimer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="timer.css" />
+    <script src="timer.js"></script>
+    <script src="manager.js"></script>
+    <style>
+        #add {
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 0;
+            position: fixed;
+            bottom: 10%;
+            right: 10%;
+        }
 
-	<body>
-		<div id="container">
-			<div id="time">
-				<p>
-					<span id="hours">0</span> hours
-				</p>
+        .bar {
+            background-color: white;
+            border-radius: 2px;
+            position: absolute;
+            transition: 0.3s;
+            -webkit-backface-visibility: hidden;
+        }
 
-				<p>
-					<span id="minutes">00</span> minutes
-				</p>
+        .bar:first-of-type {
+            width: 4px;
+            top: 25%;
+            bottom: 25%;
+            left: 47%;
+        }
 
-				<p>
-					<span id="seconds">00</span> seconds
-				</p>
-			</div>
-			<div id="ui">
-				<button class="button" id="start">start</button>
-				<button class="button" id="stop">stop</button>
-				<button class="button" id="clear">clear</button>
-			</div>
-		</div>
-	</body>
+        .bar:last-of-type {
+            height: 4px;
+            left: 25%;
+            right: 25%;
+            top: 47%;
+        }
+
+        #add:hover .bar {
+            transform: rotate(180deg);
+        }
+
+        #add:hover {
+            background-color: #ff5858;
+        }
+    </style>
+</head>
+<body>
+    <div id="timerContainer">
+    </div>
+    <button id="add">
+        <span class="bar"></span><span class="bar"></span>
+    </button>
+</body>
+<script>
+    document.getElementById('add').addEventListener('click', function() {
+        TimerManager.add(20000);
+    });
+</script>
 </html>
+    
