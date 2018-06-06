@@ -1,5 +1,36 @@
+body {
+    font-family: Oxygen, sans-serif;
+    font-weight: 300;
+}
+
+.none {
+    display: none;
+}
+
+#empty {
+    color: #aaaaaa;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.currtime {
+	font-size: 24px;
+	padding: 1em;
+}
+
+.timer {
+	margin-left: 1em;
+    margin-top: 2em;
+    float: left;
+    width: 200px;
+}
+
+/* add button */
 #add {
-    background-color: red;
+    background-color: rgb(255, 75, 75);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -7,6 +38,7 @@
     position: fixed;
     bottom: 10%;
     right: 10%;
+    cursor: pointer;
 }
 
 .bar {
@@ -37,4 +69,260 @@
 
 #add:hover {
     background-color: #ff5858;
+}
+
+/* Add-prompt */
+#add-prompt {
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    transform: translateY(-100vh);
+    transition: transform 0.5s ease-in-out;
+}
+
+#add-prompt.add-prompt-move {
+    transform: translateY(0);
+}
+
+#add-prompt-head {
+    background-color: rgb(255, 75, 75);
+    color: white;
+}
+
+#prompt-cancel {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: right;
+    padding: 1.5em 1em;
+    cursor: pointer;
+}
+
+#add-prompt-container {
+    padding-left: 1em;
+    padding-top: 2em;
+}
+
+.add-prompt-section {
+    margin-bottom: 3em;
+}
+
+.add-section-head {
+    color: #aaaaaa;
+    font-family: Voces, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+/* timer name */
+
+#add-name {
+    background-color: none;
+    color: #555555;
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #b9b9b9;
+}
+
+/* timer type */
+
+.type-label {
+    display: inline-block;
+    color: #aaaaaa;
+    font-family: Voces, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 1em 1.5em;
+    margin-right: 2em; 
+    border: 1px solid #aaaaaa;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+
+.type-label:hover {
+    color: rgb(255, 75, 75);
+    border: 1px solid rgb(255, 75, 75);
+}
+
+/* select the label underneath the selected type radio */
+.type-radio[type="radio"]:checked+label {
+    color: rgb(255, 75, 75);
+    border: 1px solid rgb(255, 75, 75);
+}
+
+#type-tooltip {
+    display: none;
+    color: #aaaaaa;
+    font-size: 10px;
+    margin-top: 1.5em;
+}
+
+/* timer time */
+.add-time-input {
+    background-color: none;
+    color: #555555;
+    font-family: Oxygen, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    width: 10%;
+    border: 0;
+    border-bottom: 1px solid #b9b9b9;
+    margin-right: 0.1em;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+
+}
+
+.add-time-input2 {
+    background-color: none;
+    color: #555555;
+    font-family: Oxygen, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    width: 10%;
+    border: 0;
+    border-bottom: 1px solid #b9b9b9;
+    margin-right: 0.1em;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.time-label {
+    color: #aaaaaa;
+    font-family: Voces, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-right: 1em;
+}
+
+#increment-section {
+    margin-top: 1em;
+}
+
+.time-increment {
+    background-color: white;
+    color: #aaaaaa;
+    font-family: Voces, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-right: 1.5em;
+    margin-left: 0;
+    border: 1px solid #aaaaaa;
+}
+
+#auto-repeat-check {
+    display: none;
+}
+
+#auto-repeat {
+    color: #aaaaaa;
+    font-family: Voces, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-left: 3em;
+    transition: 0.2s;
+}
+
+#auto-repeat:hover {
+    color: rgb(255, 75, 75);
+}
+
+#auto-repeat-check:checked+label {
+    color: rgb(255, 75, 75);
+}
+
+.label-ampm {
+    color: #aaaaaa;
+    font-family: Voces, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-right: 1em;
+    transition: 0.2s;
+}
+
+.label-ampm:hover {
+    color: rgb(255, 75, 75);
+}
+
+.time-radio:checked+label {
+    color: rgb(255, 75, 75);
+}
+
+.ampm-offset {
+    margin-left: 1em;
+}
+
+.ampm-offset2 {
+    margin-right: 7em;
+}
+
+/* add timer button in prompt */
+#add-prompt-complete {
+    display: block;
+    background-color: rgb(255, 75, 75);
+    color: white;
+    padding: 0.8em 4em;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-prompt-complete:hover {
+    background-color: rgb(225, 35, 35);
+}
+
+@media screen and (min-width: 361px) {
+    #add-prompt-container {
+        padding: 1.5em 2em;
+    }
+
+    #empty {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-height: 480px) {
+    #add-prompt {
+        border-bottom: 1px solid #b9b9b9;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        padding-bottom: 5em;
+    }
+}
+
+@media screen and (min-height: 640px) {
+    .add-prompt-section {
+        margin-bottom: 4em;
+    }
+
+    #add-prompt {
+        border-bottom: 1px solid #b9b9b9;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        padding-bottom: 5em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #add-prompt {
+        width: 768px;
+        height: 500px;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-left: 1px solid #b9b9b9;
+        border-right: 1px solid #b9b9b9;
+        border-bottom: 1px solid #b9b9b9;
+    }
+
+    #empty {
+        font-size: 72px;
+    }
 }

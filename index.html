@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JSTimer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400|Voces" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="timer.css" />
+    <script src="modules/main.js" type="module"></script>
+</head>
+<body>
+    <button id="add">
+        <span class="bar"></span><span class="bar"></span>
+    </button>
+    <div id="timerContainer">
+         <h1 id="empty">Add a timer to begin</h1>
+    </div>
+    <div id="add-prompt">
+        <div id="add-prompt-head">
+            <p id="prompt-cancel">Cancel</p>
+        </div>
+        <div id="add-prompt-container">
+            <div class="add-prompt-section">
+                <h2 class="add-section-head">
+                    Name
+                </h2>
+                <input id="add-name" type="text" inputmode="text" maxlength="32" required/>
+            </div>
+            <div class="add-prompt-section">
+                <h2 class="add-section-head">
+                    Type
+                </h2>
+                <div id="add-type-container">
+                    <input id="type-standard" class="none type-radio" name="add-type" type="radio" />
+                    <label class="type-label" for="type-standard">Standard</label>
+                    <input id="type-custom" class="none type-radio" name="add-type" type="radio" />
+                    <label class="type-label" for="type-custom">Custom</label>
+                    <input id="type-preset" class="none type-radio" name="add-type" type="radio" />
+                    <label class="type-label" for="type-preset">Preset</label>
+                    <p id="type-tooltip">*Countdown from a set amount of time.</p>
+                </div>
+            </div>
+            <div class="add-prompt-section">
+                <h2 class="add-section-head">
+                    Time
+                </h2>
+                <div class="add-time-section" >
+                    <!--<input class="add-time-input" type="number" inputmode="number" maxlength="2" min="0" max="99" />
+                    <label class="time-label">h</label>
+                    <input class="add-time-input" type="number" inputmode="number" maxlength="2" min="0" max="59" />
+                    <label class="time-label">m</label>
+                    <input class="add-time-input" type="number" inputmode="number" maxlength="2" min="0" max="59" />
+                    <label class="time-label">s</label>-->
+
+                    <input id="hour" class="add-time-input2" type="number" inputmode="number" maxlength="2" min="1" max="12" />
+                    <span>:</span>
+                    <input id="minute" class="add-time-input2" type="number" inputmode="number" maxlength="2" min="0" max="59" />
+                    <input id="time-am" class="none time-radio" name="ampm" type="radio"/>
+                    <label class="label-ampm ampm-offset" for="time-am">am</label>
+                    <input id="time-pm" class="none time-radio" name="ampm" type="radio"/>
+                    <label class="label-ampm ampm-offset2" for="time-pm">pm</label>
+                    <input id="auto-repeat-check" name="auto-repeat" type="checkbox" value="repeat"/>
+                    <label id="auto-repeat" for="auto-repeat-check">Auto-repeat</label> 
+                    <div id="increment-section">
+                        <button class="time-increment">Add 30sec</button>
+                        <button class="time-increment">Add 1min</button>
+                        <button class="time-increment">Add 5min</button>
+                    </div>
+                </div>
+            </div>
+            <button id="add-prompt-complete">Add Timer</button>
+        </div>
+    </div>
+</body>
+</html>
+    
